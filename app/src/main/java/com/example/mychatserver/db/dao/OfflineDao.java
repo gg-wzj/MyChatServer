@@ -55,7 +55,14 @@ public class OfflineDao {
             bean = new OfflineBean(fromUser,toUser1,tpye,message,date);
             list.add(bean);
         }
-
+        cursor.close();
+        db.close();
         return list;
+    }
+
+    public void deleteWithToUser(String toUser){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(TABLENAME, "toUser = ?", new String[]{toUser});
+        db.close();
     }
 }

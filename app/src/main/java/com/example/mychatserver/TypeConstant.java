@@ -27,4 +27,12 @@ public class TypeConstant {
     public static final String HANDLE_VERIFICATION = "handleVerification";
     public static final String OK_VERIFICATION = "okVerification";
     public static final String REFUSE_VERIFICATION = "refuseVerification";
+
+
+    public static final String REQUEST_FRIENDSHIP = "requestFriendship";
+    public static final String RESPOND_FRIENDSHIP = "respondFriendship";
+
+    public static final String EXIT = "exit";
+
+    public static final String USERINFO = "userInfo";
 }

@@ -48,6 +48,12 @@ public class RequestManager {
                 case TypeConstant.HANDLE_VERIFICATION:
                     handler = new VerificationResultHandler(request,msocket);
                     break;
+                case TypeConstant.REQUEST_FRIENDSHIP:
+                    handler = new FriendshipHandler(request,msocket);
+                    break;
+                case TypeConstant.EXIT:
+                    handler = new ExitHandler(request,msocket);
+                    break;
             }
             if (handler != null)
                 handler.handleRequest();

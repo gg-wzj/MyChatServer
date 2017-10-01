@@ -75,7 +75,7 @@ public class MyChatService extends Service {
                 BufferedReader reader = new BufferedReader(isr);
                 String data ;
                 while ((data = reader.readLine())!=null){
-                    Log.e("Wzj",data);
+                    Log.e("wzj",data);
                     RequestManager manager = new RequestManager(data,s);
                     manager.dispatchRequest();
 

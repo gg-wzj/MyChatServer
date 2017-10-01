@@ -43,9 +43,16 @@ public class SearchHandler implements RequestHandler {
             UserBean bean = dao.findWithPhone(phone);
 
             if (bean != null) {
+                //该用户存在,将信息返回给客户端
                 SearchBean searchBean = new SearchBean(phone, bean.getArea(), bean.getNick(), bean.getSex());
                 NetBean<SearchBean> netBean = new NetBean<>(TypeConstant.RESPOND_SEARCH, searchBean);
                 json = new Gson().toJson(netBean, NetBean.class);
+            }else {
+                //该用户不存在
+                JSONObject resultJO = new JSONObject();
+                resultJO.put("tye",TypeConstant.RESPOND_SEARCH);
+                resultJO.put("data","no exist");
+                json = resultJO.toString();
             }
         } catch (JSONException e) {
             e.printStackTrace();

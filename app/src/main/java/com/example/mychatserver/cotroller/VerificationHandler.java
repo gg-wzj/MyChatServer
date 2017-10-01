@@ -87,7 +87,7 @@ public class VerificationHandler implements RequestHandler {
 
         //保存到friendship表中
         FriendshipDao f_dao = new FriendshipDao();
-        FriendshipBean friendshipBean = new FriendshipBean(data.getFromUser(), data.getToUser(), 0, remark,"",data.getDate());
+        FriendshipBean friendshipBean = new FriendshipBean(data.getFromUser(), data.getToUser(), 0, remark,userBean.getNick(),data.getDate());
         f_dao.addFriendship(friendshipBean);
 
 
